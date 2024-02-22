@@ -21,10 +21,10 @@ def eliminacao_gauss_pivotamento(matriz: np.ndarray):
         # Troca as linhas se necessário
         if max_index != i:
             matriz[[i, max_index]] = matriz[[max_index, i]]
-
-        for idx in range(i + 1):
-            print(matriz[:, idx])
+        
         # Eliminação de Gauss
+        for j in range(i+1):
+            print(f"{matriz[j]}")
         for j in range(i + 1, n):
             fator = matriz[j, i] / matriz[i, i]
             print(f"{matriz[j]} - {fator} * L{i+1}")
@@ -45,4 +45,4 @@ for i in range(len(matriz_resultante) - 1, -1, -1):
 
 # Imprime a solução
 print("Solução:")
-print(x.view())
+print(x)
